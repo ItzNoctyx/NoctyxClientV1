@@ -28,12 +28,13 @@ jobs:
           gradle-version: current
 
       - name: Build Noctyx Client
+        working-directory: ./NoctyxClient
         run: gradle build
 
       - name: Upload Noctyx JAR
         uses: actions/upload-artifact@v4
         with:
           name: Noctyx-Client
-          path: build/libs/*.jar
+          path: NoctyxClient/build/libs/*.jar
           if-no-files-found: error
           
